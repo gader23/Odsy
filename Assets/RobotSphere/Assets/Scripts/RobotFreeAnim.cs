@@ -25,23 +25,23 @@ public class RobotFreeAnim : MonoBehaviour {
 	void CheckKey()
 	{
 		// Walk
-		if (Input.GetKey(KeyCode.W))
+		if (Input.GetKey(KeyCode.UpArrow)|| Input.GetKey(KeyCode.DownArrow))
 		{
 			anim.SetBool("Walk_Anim", true);
 		}
-		else if (Input.GetKeyUp(KeyCode.W))
+		else if (Input.GetKeyUp(KeyCode.UpArrow)|| Input.GetKeyUp(KeyCode.DownArrow))
 		{
 			anim.SetBool("Walk_Anim", false);
 		}
 
 		// Rotate Left
-		if (Input.GetKey(KeyCode.A))
+		if (Input.GetKey(KeyCode.LeftArrow))
 		{
 			rot[1] -= rotSpeed * Time.fixedDeltaTime;
 		}
 
 		// Rotate Right
-		if (Input.GetKey(KeyCode.D))
+		if (Input.GetKey(KeyCode.RightArrow))
 		{
 			rot[1] += rotSpeed * Time.fixedDeltaTime;
 		}
