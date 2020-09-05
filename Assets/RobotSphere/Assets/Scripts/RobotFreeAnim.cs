@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class RobotFreeAnim : MonoBehaviour {
 
-	Vector3 rot = Vector3.zero;
-	float rotSpeed = 40f;
+    Vector3 rot = Vector3.zero;
+    float rotSpeed = 40f;
 	Animator anim;
 
 	// Use this for initialization
 	void Awake()
 	{
-		anim = gameObject.GetComponent<Animator>();
+        rot =new Vector3( gameObject.transform.eulerAngles.x,
+    gameObject.transform.eulerAngles.y,
+    gameObject.transform.eulerAngles.z
+    );
+        anim = gameObject.GetComponent<Animator>();
 		gameObject.transform.eulerAngles = rot;
+        
 	}
 
 	// Update is called once per frame

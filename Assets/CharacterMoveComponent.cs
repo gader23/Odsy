@@ -16,26 +16,12 @@ public class CharacterMoveComponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!colision)
+        
             transform.Translate((Vector3.forward * Input.GetAxis("Vertical")) * speed * Time.deltaTime);
 
 
 
     }
 
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.CompareTag("enviroments"))
-        {
-            colision = true;
-        }
-    }
-
-    void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.CompareTag("enviroments"))
-        {
-            colision = false;
-        }
-    }
+    
 }
